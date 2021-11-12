@@ -33,7 +33,7 @@ function triggerTest()
 function triggerTest2()
 {
 
-    var el = document.getElementById("news_left");
+    var el = document.getElementById("news_item");
     if (el)
     {
         el.innerHTML = formatImageElement("This is a test", "darren", "images/banner-news-1.jpg", "test", "topic", "desc", "link", "cta")
@@ -50,9 +50,17 @@ function formatTextElement(title, author)
     {
         str = splitJoin(str, "[[->TITLE<-]]", title);
     }
+    else
+    {
+        str = splitJoin(str, "", title);
+    }
     if (author != null)
     {
         str = splitJoin(str, "[[->AUTHOR<-]]", author);
+    }
+    else
+    {
+        str = splitJoin(str, "", author);
     }
     return str;
 }
@@ -74,33 +82,65 @@ function formatImageElement(title, author, img, alt, topic, desc, link, cta)
     {
         str = splitJoin(str, "[[->TITLE<-]]", title);
     }
+    else
+    {
+        str = splitJoin(str, "", title);
+    }
     if (author != null)
     {
         str = splitJoin(str, "[[->AUTHOR<-]]", author);
+    }
+    else
+    {
+        str = splitJoin(str, "", author);
     }
     if (img != null)
     {
         str = splitJoin(str, "[[->IMAGE<-]]", img);
     }
+    else
+    {
+        str = splitJoin(str, "", img);
+    }
     if (alt != null)
     {
         str = splitJoin(str, "[[->ALT<-]]", alt);
+    }
+    else
+    {
+        str = splitJoin(str, "", alt);
     }
     if (topic != null)
     {
         str = splitJoin(str, "[[->TOPIC<-]]", topic);
     }
+    else
+    {
+        str = splitJoin(str, "", topic);
+    }
     if (desc != null)
     {
         str = splitJoin(str, "[[->DESC<-]]", desc);
+    }
+    else
+    {
+        str = splitJoin(str, "", desc);
     }
     if (link != null)
     {
         str = splitJoin(str, "[[->LINK<-]]", link);
     }
+    else
+    {
+        str = splitJoin(str, "", link);
+    }
     if (cta != null)
     {
         str = splitJoin(str, "[[->CTA<-]]", cta);
+    }
+    else
+    {
+        str = splitJoin(str, "", cta);
     }
     return str;
 }
